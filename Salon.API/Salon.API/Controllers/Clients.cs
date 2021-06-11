@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Salon.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class Clients : ControllerBase
     {
         [HttpGet]
-        public void get()
+        public string get()
         {
-
+            return DateTime.Now.ToString();
         }
 
         [HttpGet("{id}")]

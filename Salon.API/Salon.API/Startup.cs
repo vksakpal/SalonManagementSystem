@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -69,6 +70,13 @@ namespace Salon.API
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+
+                endpoints.MapGet("help-anon", async context =>
+                {
+                    var name = context.Request.RouteValues["name"];
+                    await context.Response.WriteAsync($"<div style='background-color:red;'>Hello Ashutosh!</div>");
+                });
+
             });
         }
     }

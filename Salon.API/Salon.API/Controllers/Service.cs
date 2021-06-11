@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Salon.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class Service : ControllerBase
     {
